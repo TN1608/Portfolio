@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ThemeProvider} from "next-themes";
 import {motion, AnimatePresence} from "framer-motion";
 import "./globals.css";
@@ -17,6 +17,13 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
         <body>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <link rel="icon" href="/img/logo.png" type={"image/png"}/>
+            <meta name="description" content="This is my portfolio website"/>
+            <meta name="author" content="Nguyen Dinh Tuan"/>
+            <title>My Portfolio</title>
+        </head>
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
