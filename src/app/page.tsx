@@ -44,7 +44,7 @@ if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger)
 }
 
-export function Home() {
+export default function Home() {
     const [activeSection, setActiveSection] = useState("home")
     const heroRef = useRef<HTMLDivElement>(null)
     const aboutRef = useRef<HTMLDivElement>(null)
@@ -588,5 +588,3 @@ export function Home() {
         </div>
     )
 }
-
-export default Home;
