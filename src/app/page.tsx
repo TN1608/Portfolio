@@ -467,7 +467,7 @@ export default function Home() {
                                     {[
                                         {icon: Mail, label: "Email", value: "tuanngdinh.1608@gmail.com"},
                                         {icon: FaGithub, label: "GitHub", value: "https://github.com/TN1608"},
-                                        {icon: Code, label: "Website", value: "www.example.com"},
+                                        {icon: Code, label: "Website", value: "https://tunzngportfolio.id.vn"},
                                     ].map((item, index) => (
                                         <motion.div
                                             key={index}
