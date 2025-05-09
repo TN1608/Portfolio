@@ -28,7 +28,7 @@ export function ContactForm() {
         const message = formData.get("message") as string
 
         try {
-            const response = await fetch("/api/send-email", {
+            const response = await fetch("/api/send-mail", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
