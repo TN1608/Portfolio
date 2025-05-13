@@ -115,6 +115,22 @@ export default function Home() {
             github: "https://gitlab.com/websitetuyendung/vieclamsanxuat_v2/-/blob/DinhTuan",
             demo: "https://vieclamsanxuat.vercel.app/",
         },
+        {
+            title: "MiziStore",
+            description: "An online digital service store with real product integrations, AI features, smooth GSAP animations, and built using modern web technologies.",
+            tags: ["NextJS", "Tailwind", "Framer Motion", "GSAP", "Gemini API", "Java Spring boot", "Postgresql"],
+            image: "/img/mizistore.png",
+            github: "https://github.com/TN1608/mizistore",
+            demo: "https://mizistore.id.vn/",
+        },
+        {
+            title: "TNIzStore",
+            description: "A gaming and media service website offering game codes, monthly packs, and social media bundles with integrated AI chat and sleek UI.",
+            tags: ["NextJS", "Tailwind", "Framer Motion", "GSAP", "Gemini API", "Java Spring boot", "Postgresql", "ShadcnUI"],
+            image: "/img/tnizstore.png",
+            github: "https://github.com/TN1608/TNIzStore",
+            demo: "https://tnizstore.vercel.app/",
+        },
     ]
 
     const skills = [
@@ -195,9 +211,9 @@ export default function Home() {
                             transition={{duration: 0.5}}
                             className="mb-6"
                         >
-              <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary">
-                Frontend Developer
-              </span>
+                          <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                            Frontend Developer
+                          </span>
                         </motion.div>
 
                         <motion.h1
@@ -368,17 +384,17 @@ export default function Home() {
                             ))}
                         </div>
 
-                        <motion.div
-                            key={`projects-button-${fadeInComplete}`}
-                            initial={{opacity: 0, y: 20}}
-                            animate={isProjectsInView ? {opacity: 1, y: 0} : {}}
-                            transition={{duration: 0.5, delay: 0.6}}
-                            className="mt-12 text-center"
-                        >
-                            <Button size="lg" variant="outline">
-                                View All Projects <ArrowRight className="ml-2 h-4 w-4"/>
-                            </Button>
-                        </motion.div>
+                        {/*<motion.div*/}
+                        {/*    key={`projects-button-${fadeInComplete}`}*/}
+                        {/*    initial={{opacity: 0, y: 20}}*/}
+                        {/*    animate={isProjectsInView ? {opacity: 1, y: 0} : {}}*/}
+                        {/*    transition={{duration: 0.5, delay: 0.6}}*/}
+                        {/*    className="mt-12 text-center"*/}
+                        {/*>*/}
+                        {/*    <Button size="lg" variant="outline">*/}
+                        {/*        View All Projects <ArrowRight className="ml-2 h-4 w-4"/>*/}
+                        {/*    </Button>*/}
+                        {/*</motion.div>*/}
                     </div>
                 </section>
 
