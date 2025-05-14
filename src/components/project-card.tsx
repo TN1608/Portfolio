@@ -28,7 +28,7 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
           initial={{ opacity: 0, y: 50, rotateX: -10 }}
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.5 }}
           whileHover={{ y: -12, scale: 1.02 }}
           className={`project-card ${className || ''}`}
       >

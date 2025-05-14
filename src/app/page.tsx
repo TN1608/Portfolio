@@ -383,18 +383,6 @@ export default function Home() {
                                 <ProjectCard key={index} project={project} index={index} className="project-card"/>
                             ))}
                         </div>
-
-                        {/*<motion.div*/}
-                        {/*    key={`projects-button-${fadeInComplete}`}*/}
-                        {/*    initial={{opacity: 0, y: 20}}*/}
-                        {/*    animate={isProjectsInView ? {opacity: 1, y: 0} : {}}*/}
-                        {/*    transition={{duration: 0.5, delay: 0.6}}*/}
-                        {/*    className="mt-12 text-center"*/}
-                        {/*>*/}
-                        {/*    <Button size="lg" variant="outline">*/}
-                        {/*        View All Projects <ArrowRight className="ml-2 h-4 w-4"/>*/}
-                        {/*    </Button>*/}
-                        {/*</motion.div>*/}
                     </div>
                 </section>
 
