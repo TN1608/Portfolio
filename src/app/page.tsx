@@ -250,98 +250,91 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section ref={aboutRef} className="py-20 bg-muted/30">
-                    <div className="container px-4 max-w-7xl mx-auto">
+                <section ref={aboutRef} className="py-12 sm:py-20 bg-muted/30">
+                    <div className="container px-4 sm:px-6 max-w-7xl mx-auto">
                         <motion.div
-                            key={`about-${fadeInComplete}`} // Reset animation khi fade-in hoàn tất
-                            initial={{opacity: 0, y: 50}}
-                            animate={isAboutInView ? {opacity: 1, y: 0} : {}}
-                            transition={{duration: 0.7}}
-                            className="max-w-3xl mx-auto text-center mb-16"
+                            key={`about-${fadeInComplete}`}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isAboutInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.7 }}
+                            className="max-w-3xl mx-auto text-center mb-10 sm:mb-16"
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-                            <div className="h-1 w-20 bg-primary mx-auto mb-8"></div>
-                            <p className="text-lg text-muted-foreground">
-                                As a front-end developer, I specialize in creating dynamic and responsive web
-                                applications.
-                                My expertise lies in HTML, CSS, JavaScript, and React, allowing me to build
-                                user-friendly
-                                interfaces. I am passionate about crafting seamless user experiences that engage and
-                                delight.
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">About Me</h2>
+                            <div className="h-1 w-16 sm:w-20 bg-primary mx-auto mb-6 sm:mb-8"></div>
+                            <p className="text-base sm:text-lg text-muted-foreground">
+                                As a front-end developer, I specialize in creating dynamic and responsive web applications.
+                                My expertise lies in HTML, CSS, JavaScript, and React, allowing me to build user-friendly
+                                interfaces. I am passionate about crafting seamless user experiences that engage and delight.
                             </p>
                         </motion.div>
 
-                        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto items-center">
                             <motion.div
                                 key={`about-image-${fadeInComplete}`}
-                                initial={{opacity: 0, x: -50}}
-                                animate={isAboutInView ? {opacity: 1, x: 0} : {}}
-                                transition={{duration: 0.7, delay: 0.2}}
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.7, delay: 0.2 }}
                             >
-                                <div className="relative max-w-md mx-auto">
-                                    <div
-                                        className="absolute -inset-4 rounded-xl bg-gradient-to-r from-primary/20 to-primary/40 blur-xl opacity-70"></div>
+                                <div className="relative max-w-sm sm:max-w-md mx-auto">
+                                    <div className="absolute -inset-3 sm:-inset-4 rounded-xl bg-gradient-to-r from-primary/20 to-primary/40 blur-xl opacity-70"></div>
                                     <div className="relative aspect-square rounded-xl overflow-hidden border">
-                                        <img src="/img/aboutme.jpg" alt="Developer"
-                                             className="object-cover w-full h-full"/>
+                                        <img src="/img/aboutme.jpg" alt="Developer" className="object-cover w-full h-full" />
                                     </div>
                                 </div>
                             </motion.div>
 
                             <motion.div
                                 key={`about-details-${fadeInComplete}`}
-                                initial={{opacity: 0, x: 50}}
-                                animate={isAboutInView ? {opacity: 1, x: 0} : {}}
-                                transition={{duration: 0.7, delay: 0.4}}
-                                className="space-y-6"
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.7, delay: 0.4 }}
+                                className="space-y-4 sm:space-y-6"
                             >
-                                <h3 className="text-2xl font-bold">
+                                <h3 className="text-xl sm:text-2xl font-bold">
                                     Hi, I'm <span className="text-primary">Nguyen Dinh Tuan</span>
                                 </h3>
-                                <p className="text-muted-foreground">
-                                    With over 1 years of experience in web development, I specialize in building
+                                <p className="text-sm sm:text-base text-muted-foreground">
+                                    With over 1 year of experience in web development, I specialize in building
                                     high-performance applications with beautiful user interfaces and smooth animations.
                                     I'm passionate about creating digital solutions that solve real-world problems.
                                 </p>
 
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                     <div>
-                                        <h4 className="font-medium mb-2">Location</h4>
-                                        <p className="text-muted-foreground">Go Vap district, Ho Chi Minh City</p>
+                                        <h4 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Location</h4>
+                                        <p className="text-xs sm:text-sm text-muted-foreground">Go Vap district, Ho Chi Minh City</p>
                                     </div>
                                     <div>
-                                        <h4 className="font-medium mb-2">Experience</h4>
-                                        <p className="text-muted-foreground">1+ Years</p>
+                                        <h4 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Experience</h4>
+                                        <p className="text-xs sm:text-sm text-muted-foreground">1+ Years</p>
                                     </div>
                                     <div>
-                                        <h4 className="font-medium mb-2">Email</h4>
-                                        <p className="text-muted-foreground">tuanngdinh.1608@gmail.com</p>
+                                        <h4 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Email</h4>
+                                        <p className="text-xs sm:text-sm text-muted-foreground">tuanngdinh.1608@gmail.com</p>
                                     </div>
                                     <div>
-                                        <h4 className="font-medium mb-2">Availability</h4>
-                                        <p className="text-muted-foreground">Freelance & Full-time</p>
+                                        <h4 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Availability</h4>
+                                        <p className="text-xs sm:text-sm text-muted-foreground">Freelance & Full-time</p>
                                     </div>
                                 </div>
 
-                                <div className="flex gap-4">
+                                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                     <DropdownMenu>
                                         <DropdownMenuTrigger asChild>
-                                            <Button className="cursor-pointer" variant="default">
-                                                <User className="mr-2 h-4 w-4"/> More About Me
+                                            <Button className="cursor-pointer text-sm sm:text-base" variant="default">
+                                                <User className="mr-2 h-4 w-4" /> More About Me
                                             </Button>
                                         </DropdownMenuTrigger>
                                         <DropdownMenuContent className="w-56">
                                             <DropdownMenuLabel>About Me</DropdownMenuLabel>
-                                            <DropdownMenuSeparator/>
+                                            <DropdownMenuSeparator />
                                             <DropdownMenuItem>
-                                                <Link href="www.linkedin.com/in/tuấn-nguyễn-đình-70a790359"
-                                                      className="w-full">
+                                                <Link href="https://www.linkedin.com/in/tuấn-nguyễn-đình-70a790359" className="w-full">
                                                     LinkedIn
                                                 </Link>
                                             </DropdownMenuItem>
                                             <DropdownMenuItem>
-                                                <Link href="https://www.facebook.com/TuanNguyen160804/"
-                                                      className="w-full">
+                                                <Link href="https://www.facebook.com/TuanNguyen160804/" className="w-full">
                                                     Facebook
                                                 </Link>
                                             </DropdownMenuItem>
@@ -352,8 +345,8 @@ export default function Home() {
                                             </DropdownMenuItem>
                                         </DropdownMenuContent>
                                     </DropdownMenu>
-                                    <Button onClick={() => scrollToSection(contactRef)} variant="outline">
-                                        <Mail className="mr-2 h-4 w-4"/> Contact Me
+                                    <Button onClick={() => scrollToSection(contactRef)} variant="outline" className="text-sm sm:text-base">
+                                        <Mail className="mr-2 h-4 w-4" /> Contact Me
                                     </Button>
                                 </div>
                             </motion.div>
@@ -386,51 +379,51 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section ref={skillsRef} className="py-20 bg-muted/30">
-                    <div className="container px-4">
+                <section ref={skillsRef} className="py-12 sm:py-20 bg-muted/30">
+                    <div className="container px-4 sm:px-6">
                         <motion.div
                             key={`skills-${fadeInComplete}`}
-                            initial={{opacity: 0, y: 50}}
-                            animate={isSkillsInView ? {opacity: 1, y: 0} : {}}
-                            transition={{duration: 0.7}}
-                            className="max-w-3xl mx-auto text-center mb-16"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isSkillsInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.7 }}
+                            className="max-w-3xl mx-auto text-center mb-10 sm:mb-16"
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
-                            <div className="h-1 w-20 bg-primary mx-auto mb-8"></div>
-                            <p className="text-lg text-muted-foreground">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">My Skills</h2>
+                            <div className="h-1 w-16 sm:w-20 bg-primary mx-auto mb-6 sm:mb-8"></div>
+                            <p className="text-base sm:text-lg text-muted-foreground">
                                 I've worked with a variety of technologies and frameworks to create stunning web
                                 applications with amazing user experiences.
                             </p>
                         </motion.div>
 
-                        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
                             {skills.map((skill, index) => (
-                                <SkillItem key={index} skill={skill} className="skill-item"/>
+                                <SkillItem key={index} skill={skill} className="skill-item" />
                             ))}
                         </div>
 
                         <motion.div
                             key={`skills-stats-${fadeInComplete}`}
-                            initial={{opacity: 0}}
-                            animate={isSkillsInView ? {opacity: 1} : {}}
-                            transition={{duration: 0.7, delay: 0.6}}
-                            className="mt-16 grid md:grid-cols-4 gap-6 text-center"
+                            initial={{ opacity: 0 }}
+                            animate={isSkillsInView ? { opacity: 1 } : {}}
+                            transition={{ duration: 0.7, delay: 0.6 }}
+                            className="mt-10 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center"
                         >
                             {[
-                                {label: "Projects Completed", value: "3+"},
-                                {label: "Graduated", value: "May 5 , 2025"},
-                                {label: "Years Experience", value: "1+"},
-                                {label: "GPA", value: "A-"},
+                                { label: "Projects Completed", value: "3+" },
+                                { label: "Graduated", value: "May 5, 2025" },
+                                { label: "Years Experience", value: "1+" },
+                                { label: "GPA", value: "(3.42/4.00)" },
                             ].map((stat, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{y: 50, opacity: 0}}
-                                    animate={isSkillsInView ? {y: 0, opacity: 1} : {}}
-                                    transition={{duration: 0.5, delay: 0.2 + index * 0.1}}
-                                    className="p-6 rounded-lg border bg-card"
+                                    initial={{ y: 50, opacity: 0 }}
+                                    animate={isSkillsInView ? { y: 0, opacity: 1 } : {}}
+                                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                                    className="p-4 sm:p-6 rounded-lg border bg-card"
                                 >
-                                    <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</h3>
-                                    <p className="text-muted-foreground">{stat.label}</p>
+                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1 sm:mb-2">{stat.value}</h3>
+                                    <p className="text-xs sm:text-sm text-muted-foreground">{stat.label}</p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -486,7 +479,17 @@ export default function Home() {
                                             </div>
                                             <div>
                                                 <p className="text-sm text-muted-foreground">{item.label}</p>
-                                                <p className="font-medium">{item.value}</p>
+                                                <p className="text-base font-medium text-foreground">
+                                                    {item.label === "Email" ? (
+                                                        <a href={`mailto:${item.value}`} className="hover:underline">
+                                                            {item.value}
+                                                        </a>
+                                                    ) : (
+                                                        <a href={item.value} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                                            {item.value}
+                                                        </a>
+                                                    )}
+                                                </p>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -544,16 +547,16 @@ export default function Home() {
                         <div className="flex flex-col md:flex-row justify-between items-center">
                             <p className="text-muted-foreground">© {new Date().getFullYear()} Nguyen Dinh Tuan. All
                                 rights reserved.</p>
-                            <div className="flex items-center gap-4 mt-4 md:mt-0">
-                                <Link href="#"
-                                      className="text-muted-foreground hover:text-foreground transition-colors">
-                                    Privacy Policy
-                                </Link>
-                                <Link href="#"
-                                      className="text-muted-foreground hover:text-foreground transition-colors">
-                                    Terms of Service
-                                </Link>
-                            </div>
+                            {/*<div className="flex items-center gap-4 mt-4 md:mt-0">*/}
+                            {/*    <Link href="#"*/}
+                            {/*          className="text-muted-foreground hover:text-foreground transition-colors">*/}
+                            {/*        Privacy Policy*/}
+                            {/*    </Link>*/}
+                            {/*    <Link href="#"*/}
+                            {/*          className="text-muted-foreground hover:text-foreground transition-colors">*/}
+                            {/*        Terms of Service*/}
+                            {/*    </Link>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                 </footer>
