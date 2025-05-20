@@ -115,14 +115,14 @@ export default function Home() {
             github: "https://gitlab.com/websitetuyendung/vieclamsanxuat_v2/-/blob/DinhTuan",
             demo: "https://vieclamsanxuat.vercel.app/",
         },
-        {
-            title: "MiziStore",
-            description: "An online digital service store with real product integrations, AI features, smooth GSAP animations, and built using modern web technologies.",
-            tags: ["NextJS", "Tailwind", "Framer Motion", "GSAP", "Gemini API", "Java Spring boot", "Postgresql"],
-            image: "/img/mizistore.png",
-            github: "https://github.com/TN1608/mizistore",
-            demo: "https://mizistore.id.vn/",
-        },
+        // {
+        //     title: "MiziStore",
+        //     description: "An online digital service store with real product integrations, AI features, smooth GSAP animations, and built using modern web technologies.",
+        //     tags: ["NextJS", "Tailwind", "Framer Motion", "GSAP", "Gemini API", "Java Spring boot", "Postgresql"],
+        //     image: "/img/mizistore.png",
+        //     github: "https://github.com/TN1608/mizistore",
+        //     demo: "https://mizistore.id.vn/",
+        // },
         {
             title: "TNIzStore",
             description: "A gaming and media service website offering game codes, monthly packs, and social media bundles with integrated AI chat and sleek UI.",
