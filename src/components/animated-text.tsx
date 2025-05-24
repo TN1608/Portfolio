@@ -42,7 +42,12 @@ export function AnimatedText({ text }: AnimatedTextProps) {
   }
 
   return (
-    <motion.div style={{ display: "flex", flexWrap: "wrap" }} variants={container} initial="hidden" animate="visible">
+    <motion.div
+      style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+      variants={container}
+      initial="hidden"
+      animate="visible"
+    >
       {words.map((word, index) => (
         <motion.span key={index} variants={child} style={{ marginRight: "0.5rem" }}>
           {word}

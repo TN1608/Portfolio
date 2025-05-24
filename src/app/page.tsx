@@ -217,7 +217,7 @@ export default function Home() {
                         </motion.div>
 
                         <motion.h1
-                            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+                            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 justify-center text-center"
                             initial={{opacity: 0}}
                             animate={{opacity: 1}}
                             transition={{delay: 0.2, duration: 0.8}}
@@ -355,7 +355,7 @@ export default function Home() {
                 </section>
 
                 <section ref={projectsRef} className="py-20">
-                    <div className="container px-4">
+                    <div className="container px-4 justify-center mx-auto">
                         <motion.div
                             key={`projects-${fadeInComplete}`}
                             initial={{opacity: 0, y: 50}}
@@ -380,7 +380,7 @@ export default function Home() {
                 </section>
 
                 <section ref={skillsRef} className="py-12 sm:py-20 bg-muted/30">
-                    <div className="container px-4 sm:px-6">
+                    <div className="container px-4 sm:px-6 max-w-7xl justify-center mx-auto">
                         <motion.div
                             key={`skills-${fadeInComplete}`}
                             initial={{ opacity: 0, y: 50 }}
@@ -431,7 +431,7 @@ export default function Home() {
                 </section>
 
                 <section ref={contactRef} className="py-20">
-                    <div className="container px-4">
+                    <div className="container px-4 justify-center mx-auto">
                         <motion.div
                             key={`contact-${fadeInComplete}`}
                             initial={{opacity: 0, y: 50}}
