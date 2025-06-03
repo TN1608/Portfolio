@@ -1,10 +1,10 @@
 "use client"
 
 import type React from "react"
-import {useEffect, useRef, useState, useContext} from "react"
-import {motion, useInView, useScroll, useTransform, AnimatePresence} from "framer-motion"
-import {gsap} from "gsap"
-import {ScrollTrigger} from "gsap/ScrollTrigger"
+import { useEffect, useRef, useState, useContext } from "react"
+import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
     ArrowRight,
     Code,
@@ -21,18 +21,19 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {Button} from "@/components/ui/button"
-import {ToggleButtons} from "@/components/ToggleButtons"
-import {ProjectCard} from "@/components/project-card"
-import {SkillItem} from "@/components/skill-item"
-import {AnimatedText} from "@/components/animated-text"
-import {HeroBackground} from "@/components/hero-background"
-import {ContactForm} from "@/components/contact-form"
-import {ThreeDBackground} from "@/components/ThreeDBackground"
-import {UniverseBackground} from "@/components/UniverseBackground"
-import {FaFacebook, FaGithub, FaLinkedin} from "react-icons/fa"
-import {FaSquareXTwitter} from "react-icons/fa6"
-import {ThemeRippleContext} from "@/context/theme-ripple-context"
+import { Button } from "@/components/ui/button"
+import { ToggleButtons } from "@/components/ToggleButtons"
+import { ProjectCard } from "@/components/project-card"
+import { SkillItem } from "@/components/skill-item"
+import { AnimatedText } from "@/components/animated-text"
+import { HeroBackground } from "@/components/hero-background"
+import { ContactForm } from "@/components/contact-form"
+import { ThreeDBackground } from "@/components/ThreeDBackground"
+import { UniverseBackground } from "@/components/UniverseBackground"
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
+import { FaSquareXTwitter } from "react-icons/fa6"
+import { ThemeRippleContext } from "@/context/theme-ripple-context"
+import { Navbar } from "@/components/Navbar"
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -40,21 +41,22 @@ if (typeof window !== "undefined") {
 }
 
 export default function Home() {
-    const {ripple, isFadingIn, fadeInComplete} = useContext(ThemeRippleContext)
+    const { ripple, isFadingIn, fadeInComplete } = useContext(ThemeRippleContext)
     const [activeSection, setActiveSection] = useState("home")
+
     const heroRef = useRef<HTMLDivElement>(null)
     const aboutRef = useRef<HTMLDivElement>(null)
     const skillsRef = useRef<HTMLDivElement>(null)
     const projectsRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
     const contactRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
 
-    const {scrollYProgress} = useScroll()
+    const { scrollYProgress } = useScroll()
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8])
 
-    const isAboutInView = useInView(aboutRef, {once: false, amount: 0.5})
-    const isProjectsInView = useInView(projectsRef, {once: false, amount: 0.3})
-    const isSkillsInView = useInView(skillsRef, {once: false, amount: 0.3})
-    const isContactInView = useInView(contactRef, {once: false, amount: 0.3})
+    const isAboutInView = useInView(aboutRef, { once: false, amount: 0.5 })
+    const isProjectsInView = useInView(projectsRef, { once: false, amount: 0.3 })
+    const isSkillsInView = useInView(skillsRef, { once: false, amount: 0.3 })
+    const isContactInView = useInView(contactRef, { once: false, amount: 0.3 })
 
     // Update active section based on scroll position
     useEffect(() => {
@@ -95,8 +97,16 @@ export default function Home() {
     }, [fadeInComplete]) // Tái khởi tạo GSAP khi fade-in hoàn tất
 
     const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-        ref.current?.scrollIntoView({behavior: "smooth"})
+        ref.current?.scrollIntoView({ behavior: "smooth" })
     }
+
+    const navItems = [
+        { name: "Home", ref: heroRef, id: "home" },
+        { name: "About", ref: aboutRef, id: "about" },
+        { name: "Projects", ref: projectsRef, id: "projects" },
+        { name: "Skills", ref: skillsRef, id: "skills" },
+        { name: "Contact", ref: contactRef, id: "contact" },
+    ]
 
     const projects = [
         {
@@ -115,14 +125,6 @@ export default function Home() {
             github: "https://gitlab.com/websitetuyendung/vieclamsanxuat_v2/-/blob/DinhTuan",
             demo: "https://vieclamsanxuat.vercel.app/",
         },
-        // {
-        //     title: "MiziStore",
-        //     description: "An online digital service store with real product integrations, AI features, smooth GSAP animations, and built using modern web technologies.",
-        //     tags: ["NextJS", "Tailwind", "Framer Motion", "GSAP", "Gemini API", "Java Spring boot", "Postgresql"],
-        //     image: "/img/mizistore.png",
-        //     github: "https://github.com/TN1608/mizistore",
-        //     demo: "https://mizistore.id.vn/",
-        // },
         {
             title: "TNIzStore",
             description: "A gaming and media service website offering game codes, monthly packs, and social media bundles with integrated AI chat and sleek UI.",
@@ -134,14 +136,14 @@ export default function Home() {
     ]
 
     const skills = [
-        {name: "React", level: 90},
-        {name: "Next.js", level: 85},
-        {name: "TypeScript", level: 80},
-        {name: "Java", level: 75},
-        {name: "Tailwind CSS", level: 90},
-        {name: "Three.js", level: 70},
-        {name: "Spring boot", level: 75},
-        {name: "Framer Motion", level: 85},
+        { name: "React", level: 90 },
+        { name: "Next.js", level: 85 },
+        { name: "TypeScript", level: 80 },
+        { name: "Java", level: 75 },
+        { name: "Tailwind CSS", level: 90 },
+        { name: "Three.js", level: 70 },
+        { name: "Spring boot", level: 75 },
+        { name: "Framer Motion", level: 85 },
     ]
 
     return (
@@ -151,10 +153,10 @@ export default function Home() {
                 {ripple && (
                     <motion.div
                         key="fade-overlay"
-                        initial={{opacity: 1}}
-                        animate={{opacity: isFadingIn ? 0 : 1}}
-                        exit={{opacity: 0}}
-                        transition={{duration: 0.5}}
+                        initial={{ opacity: 1 }}
+                        animate={{ opacity: isFadingIn ? 0 : 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.5 }}
                         className="fixed inset-0 z-[9998] bg-background pointer-events-none"
                     />
                 )}
@@ -162,83 +164,46 @@ export default function Home() {
 
             {/* Nội dung chính */}
             <div>
-                <ToggleButtons scale={scale.get()}/>
-
-                <motion.nav
-                    initial={{y: -100, opacity: 0}}
-                    animate={{y: 0, opacity: 1}}
-                    transition={{duration: 0.5}}
-                    className="fixed top-0 left-0 right-0 z-50 flex items-center w-full justify-center px-6 py-4 backdrop-blur-md bg-background/80 border-b"
-                >
-                    <div className="hidden md:flex items-center space-x-8">
-                        {[
-                            {name: "Home", ref: heroRef, id: "home"},
-                            {name: "About", ref: aboutRef, id: "about"},
-                            {name: "Projects", ref: projectsRef, id: "projects"},
-                            {name: "Skills", ref: skillsRef, id: "skills"},
-                            {name: "Contact", ref: contactRef, id: "contact"},
-                        ].map((item) => (
-                            <motion.button
-                                key={item.name}
-                                onClick={() => scrollToSection(item.ref as React.RefObject<HTMLDivElement>)}
-                                className={`relative px-1 py-2 text-lg font-medium transition-colors ${
-                                    activeSection === item.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                                }`}
-                                whileHover={{scale: 1.05}}
-                                whileTap={{scale: 0.95}}
-                            >
-                                {item.name}
-                                {activeSection === item.id && (
-                                    <motion.div
-                                        layoutId="activeSection"
-                                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                                        initial={{opacity: 0}}
-                                        animate={{opacity: 1}}
-                                        transition={{duration: 0.2}}
-                                    />
-                                )}
-                            </motion.button>
-                        ))}
-                    </div>
-                </motion.nav>
+                <ToggleButtons scale={scale.get()} />
+                <Navbar activeSection={activeSection} scrollToSection={scrollToSection} navItems={navItems} />
 
                 <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-                    <UniverseBackground/>
+                    <UniverseBackground />
                     <div className="container relative z-10 px-4 flex flex-col items-center text-center">
                         <motion.div
-                            initial={{opacity: 0, y: 20}}
-                            animate={{opacity: 1, y: 0}}
-                            transition={{duration: 0.5}}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
                             className="mb-6"
                         >
-                          <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary">
-                            Frontend Developer
-                          </span>
+                            <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                                Frontend Developer
+                            </span>
                         </motion.div>
 
                         <motion.h1
                             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 justify-center text-center"
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            transition={{delay: 0.2, duration: 0.8}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2, duration: 0.8 }}
                         >
-                            <AnimatedText text="Creating digital experiences that matter"/>
+                            <AnimatedText text="Creating digital experiences that matter" />
                         </motion.h1>
 
                         <motion.p
                             className="max-w-2xl text-lg md:text-xl text-muted-foreground mb-8"
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            transition={{delay: 0.4, duration: 0.8}}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.4, duration: 0.8 }}
                         >
                             I build innovative web applications with cutting-edge technologies and stunning animations
                         </motion.p>
 
                         <motion.div
                             className="flex flex-col sm:flex-row gap-4"
-                            initial={{opacity: 0, y: 20}}
-                            animate={{opacity: 1, y: 0}}
-                            transition={{delay: 0.6, duration: 0.5}}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6, duration: 0.5 }}
                         >
                             <Button size="lg" onClick={() => scrollToSection(projectsRef)}>
                                 View My Work
@@ -358,9 +323,9 @@ export default function Home() {
                     <div className="container px-4 justify-center mx-auto">
                         <motion.div
                             key={`projects-${fadeInComplete}`}
-                            initial={{opacity: 0, y: 50}}
-                            animate={isProjectsInView ? {opacity: 1, y: 0} : {}}
-                            transition={{duration: 0.7}}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isProjectsInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.7 }}
                             className="max-w-3xl mx-auto text-center mb-16"
                         >
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
@@ -373,7 +338,7 @@ export default function Home() {
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {projects.map((project, index) => (
-                                <ProjectCard key={index} project={project} index={index} className="project-card"/>
+                                <ProjectCard key={index} project={project} index={index} className="project-card" />
                             ))}
                         </div>
                     </div>
@@ -434,9 +399,9 @@ export default function Home() {
                     <div className="container px-4 justify-center mx-auto">
                         <motion.div
                             key={`contact-${fadeInComplete}`}
-                            initial={{opacity: 0, y: 50}}
-                            animate={isContactInView ? {opacity: 1, y: 0} : {}}
-                            transition={{duration: 0.7}}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isContactInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.7 }}
                             className="max-w-3xl mx-auto text-center mb-16"
                         >
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
@@ -450,9 +415,9 @@ export default function Home() {
                         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                             <motion.div
                                 key={`contact-info-${fadeInComplete}`}
-                                initial={{opacity: 0, x: -50}}
-                                animate={isContactInView ? {opacity: 1, x: 0} : {}}
-                                transition={{duration: 0.7, delay: 0.2}}
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={isContactInView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.7, delay: 0.2 }}
                                 className="space-y-8"
                             >
                                 <h3 className="text-2xl font-bold">Contact Information</h3>
@@ -462,20 +427,20 @@ export default function Home() {
 
                                 <div className="space-y-6">
                                     {[
-                                        {icon: Mail, label: "Email", value: "tuanngdinh.1608@gmail.com"},
-                                        {icon: FaGithub, label: "GitHub", value: "https://github.com/TN1608"},
-                                        {icon: Code, label: "Website", value: "https://tunzngportfolio.id.vn"},
+                                        { icon: Mail, label: "Email", value: "tuanngdinh.1608@gmail.com" },
+                                        { icon: FaGithub, label: "GitHub", value: "https://github.com/TN1608" },
+                                        { icon: Code, label: "Website", value: "https://tunzngportfolio.id.vn" },
                                     ].map((item, index) => (
                                         <motion.div
                                             key={index}
-                                            initial={{x: -20, opacity: 0}}
-                                            animate={isContactInView ? {x: 0, opacity: 1} : {}}
-                                            transition={{duration: 0.4, delay: 0.3 + index * 0.1}}
+                                            initial={{ x: -20, opacity: 0 }}
+                                            animate={isContactInView ? { x: 0, opacity: 1 } : {}}
+                                            transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                                             className="flex items-center gap-4"
                                         >
                                             <div
                                                 className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
-                                                <item.icon className="w-5 h-5"/>
+                                                <item.icon className="w-5 h-5" />
                                             </div>
                                             <div>
                                                 <p className="text-sm text-muted-foreground">{item.label}</p>
@@ -499,28 +464,28 @@ export default function Home() {
                                     <h3 className="text-xl font-bold mb-4">Follow Me</h3>
                                     <div className="flex gap-4">
                                         {[
-                                            {name: "github", href: "https://github.com/TN1608"},
-                                            {name: "twitter", href: "https://twitter.com"},
-                                            {name: "linkedin", href: "www.linkedin.com/in/tuấn-nguyễn-đình-70a790359"},
-                                            {name: "facebook", href: "https://www.facebook.com/TuanNguyen160804/"},
+                                            { name: "github", href: "https://github.com/TN1608" },
+                                            { name: "twitter", href: "https://twitter.com" },
+                                            { name: "linkedin", href: "www.linkedin.com/in/tuấn-nguyễn-đình-70a790359" },
+                                            { name: "facebook", href: "https://www.facebook.com/TuanNguyen160804/" },
                                         ].map((social, index) => (
                                             <motion.a
                                                 key={social.name}
                                                 href={social.href}
-                                                initial={{scale: 0}}
-                                                animate={isContactInView ? {scale: 1} : {}}
-                                                transition={{duration: 0.3, delay: 0.5 + index * 0.1}}
+                                                initial={{ scale: 0 }}
+                                                animate={isContactInView ? { scale: 1 } : {}}
+                                                transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
                                                 className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                                             >
                                                 <span className="sr-only">{social.name}</span>
                                                 {social.name === "github" ? (
-                                                    <FaGithub className="w-5 h-5"/>
+                                                    <FaGithub className="w-5 h-5" />
                                                 ) : social.name === "twitter" ? (
-                                                    <FaSquareXTwitter className="w-5 h-5"/>
+                                                    <FaSquareXTwitter className="w-5 h-5" />
                                                 ) : social.name === "linkedin" ? (
-                                                    <FaLinkedin className="w-5 h-5"/>
+                                                    <FaLinkedin className="w-5 h-5" />
                                                 ) : social.name === "facebook" ? (
-                                                    <FaFacebook className="w-5 h-5"/>
+                                                    <FaFacebook className="w-5 h-5" />
                                                 ) : (
                                                     <span className="w-5 h-5">{social.name}</span>
                                                 )}
@@ -532,11 +497,11 @@ export default function Home() {
 
                             <motion.div
                                 key={`contact-form-${fadeInComplete}`}
-                                initial={{opacity: 0, x: 50}}
-                                animate={isContactInView ? {opacity: 1, x: 0} : {}}
-                                transition={{duration: 0.7, delay: 0.4}}
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={isContactInView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.7, delay: 0.4 }}
                             >
-                                <ContactForm/>
+                                <ContactForm />
                             </motion.div>
                         </div>
                     </div>
@@ -547,16 +512,6 @@ export default function Home() {
                         <div className="flex flex-col md:flex-row justify-between items-center">
                             <p className="text-muted-foreground">© {new Date().getFullYear()} Nguyen Dinh Tuan. All
                                 rights reserved.</p>
-                            {/*<div className="flex items-center gap-4 mt-4 md:mt-0">*/}
-                            {/*    <Link href="#"*/}
-                            {/*          className="text-muted-foreground hover:text-foreground transition-colors">*/}
-                            {/*        Privacy Policy*/}
-                            {/*    </Link>*/}
-                            {/*    <Link href="#"*/}
-                            {/*          className="text-muted-foreground hover:text-foreground transition-colors">*/}
-                            {/*        Terms of Service*/}
-                            {/*    </Link>*/}
-                            {/*</div>*/}
                         </div>
                     </div>
                 </footer>
