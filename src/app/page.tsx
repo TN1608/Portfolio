@@ -33,7 +33,7 @@ import { UniverseBackground } from "@/components/UniverseBackground"
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 import { FaSquareXTwitter } from "react-icons/fa6"
 import { ThemeRippleContext } from "@/context/theme-ripple-context"
-import { Navbar } from "@/components/Navbar"
+import { Navbar } from "@/components/fragments/Navbar"
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
