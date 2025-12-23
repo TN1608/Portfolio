@@ -6,13 +6,13 @@ import { HeroBackground } from "@/components/hero-background"
 
 interface NavItem {
     name: string
-    ref: React.RefObject<HTMLDivElement | null>
+    ref: React.RefObject<HTMLElement | null>
     id: string
 }
 
 interface NavbarProps {
     activeSection: string
-    scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void
+    scrollToSection: (ref: React.RefObject<HTMLElement | null>) => void
     navItems: NavItem[]
 }
 
@@ -28,10 +28,9 @@ export function Navbar({ activeSection, scrollToSection, navItems }: NavbarProps
                 {navItems.map((item) => (
                     <motion.button
                         key={item.name}
-                        onClick={() => scrollToSection(item.ref as React.RefObject<HTMLDivElement>)}
-                        className={`relative px-1 py-2 text-lg font-medium transition-colors ${
-                            activeSection === item.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                        }`}
+                        onClick={() => scrollToSection(item.ref)}
+                        className={`relative px-1 py-2 text-lg font-medium transition-colors ${activeSection === item.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                            }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >

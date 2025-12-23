@@ -49,7 +49,7 @@ export function AnimatedText({ text }: AnimatedTextProps) {
       animate="visible"
     >
       {words.map((word, index) => (
-        <motion.span key={index} variants={child} style={{ marginRight: "0.5rem" }}>
+        <motion.span className={"text-accent dark:text-foreground"} key={index} variants={child} style={{ marginRight: "0.5rem" }}>
           {word}
         </motion.span>
       ))}
