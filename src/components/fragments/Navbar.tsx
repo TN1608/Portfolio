@@ -2,7 +2,6 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { HeroBackground } from "@/components/hero-background"
 
 interface NavItem {
     name: string

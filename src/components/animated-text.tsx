@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 
 interface AnimatedTextProps {
   text: string
@@ -11,7 +11,7 @@ export function AnimatedText({ text }: AnimatedTextProps) {
   const words = text.split(" ")
 
   // Variants for container of words
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
@@ -20,7 +20,7 @@ export function AnimatedText({ text }: AnimatedTextProps) {
   }
 
   // Variants for each word
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       y: 0,
