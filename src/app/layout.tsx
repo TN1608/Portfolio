@@ -6,6 +6,7 @@ import "./globals.css";
 import { ThemeRippleProvider } from "@/context/theme-ripple-context";
 import { ThemeRippleEffect } from "@/components/theme-ripple-effect";
 import Preloader from "@/components/Preloader";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={inter.className}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
                     <ThemeRippleProvider>
+                        <SmoothScroll />
                         <ThemeRippleEffect />
                         <Preloader />
                         {children}
