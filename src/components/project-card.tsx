@@ -46,16 +46,18 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
                   whileHover={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
               >
-                <Button
-                    size="sm"
-                    variant="secondary"
-                    className="bg-primary/80 hover:bg-primary text-primary-foreground"
-                    asChild
-                >
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" /> Code
-                  </a>
-                </Button>
+                {project.github && (
+                    <Button
+                        size="sm"
+                        variant="secondary"
+                        className="bg-primary/80 hover:bg-primary text-primary-foreground"
+                        asChild
+                    >
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" /> Code
+                      </a>
+                    </Button>
+                )}
                 <Button
                     size="sm"
                     className="bg-primary/80 hover:bg-primary text-primary-foreground"

@@ -26,6 +26,20 @@ export const PROJECTS = [
         github: "https://github.com/TN1608/TNIzStore",
         demo: "https://tnizstore.vercel.app/",
     },
+    {
+        title: "SKIPLI's Home Landing Page",
+        description: "High-conversion landing page for Skipli's home services, modernized by migrating from MUI to shadcn/ui with enhanced animations and performance optimizations.",
+        tags: ["ReactJS", "JavaScript", "TailwindCSS", "Shadcn/UI", "Framer Motion"],
+        image: "/img/homeskipli.png",
+        demo: "https://skiplinow.com",
+    },
+    {
+        title: "SKIPLI Salona Beauty Website",
+        description: "Comprehensive POS and management platform for beauty salons, featuring a custom AI chatbot (Gemini API) and high-performance SEO-friendly Next.js interface.",
+        tags: ["NextJS", "JavaScript", "TailwindCSS", "Shadcn/UI", "Framer Motion", "Gemini API"],
+        image: "/img/getsalona.png",
+        demo: "https://www.getsalona.com/",
+    }
 ]
 
 export const SKILLS = [
