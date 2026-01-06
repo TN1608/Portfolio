@@ -12,7 +12,7 @@ interface Project {
   description: string
   tags: string[]
   image: string
-  github: string | null
+  github?: string
   demo: string
 }
 
