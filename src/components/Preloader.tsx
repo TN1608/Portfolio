@@ -78,7 +78,7 @@ export default function Preloader() {
                 {[...Array(5)].map((_, i) => (
                     <div
                         key={i}
-                        className="stair-bar h-full w-1/5 bg-neutral-950"
+                        className="stair-bar h-full w-1/5 bg-neutral-950 dark:bg-neutral-50"
                     />
                 ))}
             </div>
