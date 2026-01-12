@@ -84,9 +84,9 @@ export default function Preloader() {
             </div>
 
             {/* Text Container */}
-            <div ref={textContainerRef} className="relative z-10 flex flex-col items-center justify-center space-y-4 text-white">
-                <h2 className="text-2xl md:text-3xl font-light tracking-widest text-neutral-400">Welcome to</h2>
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Tuan's Portfolio</h1>
+            <div ref={textContainerRef} className="relative z-10 flex flex-col items-center justify-center space-y-4 text-foreground">
+                <h2 className="text-2xl md:text-3xl font-light tracking-widest text-neutral-400 dark:text-neutral-500">Welcome to</h2>
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-neutral-50 dark:text-neutral-950">Tuan's Portfolio</h1>
             </div>
         </div>
     );
