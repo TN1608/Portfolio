@@ -1,9 +1,8 @@
 import { forwardRef } from "react"
 import { motion } from "framer-motion"
-
 import { AnimatedText } from "@/components/animated-text"
-import LightPillar from "@/components/LightPillar"
 import { Button } from "@/components/ui/button"
+import { Meteors } from "../ui/meteors"
 
 interface HeroProps {
     onViewWork: () => void
@@ -12,19 +11,9 @@ interface HeroProps {
 
 export const Hero = forwardRef<HTMLElement, HeroProps>(({ onViewWork, onContact }, ref) => {
     return (
-        <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
-            <LightPillar
-                topColor="#5227FF"
-                bottomColor="#FF9FFC"
-                intensity={1.0}
-                rotationSpeed={0.3}
-                glowAmount={0.005}
-                pillarWidth={3.0}
-                pillarHeight={0.4}
-                noiseIntensity={0.5}
-                pillarRotation={25}
-                interactive={false}
-                mixBlendMode="normal"
+        <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
+            <Meteors
+                number={50}
             />
             <div className="container relative z-10 px-4 flex flex-col items-center text-center">
                 <motion.div
@@ -33,7 +22,7 @@ export const Hero = forwardRef<HTMLElement, HeroProps>(({ onViewWork, onContact 
                     transition={{ duration: 0.5 }}
                     className="mb-6"
                 >
-                    <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 dark:text-foreground text-accent">
+                    <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-foreground">
                         Frontend Developer
                     </span>
                 </motion.div>
@@ -48,7 +37,7 @@ export const Hero = forwardRef<HTMLElement, HeroProps>(({ onViewWork, onContact 
                 </motion.h1>
 
                 <motion.p
-                    className="max-w-2xl text-lg md:text-xl dark:text-muted-foreground text-accent/80 mb-8"
+                    className="max-w-2xl text-lg md:text-xl text-foreground mb-8"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
