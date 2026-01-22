@@ -15,7 +15,7 @@ export const PROJECTS = [
         description: "A modernized job search website for factory workers, migrated from a legacy system with full responsiveness and built using up-to-date technologies.",
         tags: ["ReactJS", "Oracle ", "C#", "Responsive", "Tailwind"],
         image: "/img/vieclamsanxuat.png",
-        github: "https://gitlab.com/websitetuyendung/vieclamsanxuat_v2/-/blob/DinhTuan",
+        // github: "https://gitlab.com/websitetuyendung/vieclamsanxuat_v2/-/blob/DinhTuan",
         demo: "https://vieclamsanxuat.vercel.app/",
     },
     {
