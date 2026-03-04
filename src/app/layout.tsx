@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <title>My Portfolio</title>
             </head>
             <body className={inter.className}>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <ThemeRippleProvider>
                         <SmoothScroll />
                         <ThemeRippleEffect />

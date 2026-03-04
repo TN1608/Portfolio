@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { AnimatedText } from "@/components/animated-text"
 import { Button } from "@/components/ui/button"
 import { Meteors } from "../ui/meteors"
+import RotatingText from "../RotatingText"
 
 interface HeroProps {
     onViewWork: () => void
@@ -22,9 +23,18 @@ export const Hero = forwardRef<HTMLElement, HeroProps>(({ onViewWork, onContact 
                     transition={{ duration: 0.5 }}
                     className="mb-6"
                 >
-                    <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-foreground">
-                        Frontend Developer
-                    </span>
+                    <RotatingText
+                        texts={['Front-end Developer', 'Full-stack Engineer']}
+                        mainClassName="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-foreground overflow-hidden justify-center"
+                        staggerFrom={"last"}
+                        initial={{ y: "100%" }}
+                        animate={{ y: 0 }}
+                        exit={{ y: "-120%" }}
+                        staggerDuration={0.025}
+                        splitLevelClassName="overflow-hidden pb-0.5"
+                        transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                        rotationInterval={2500}
+                    />
                 </motion.div>
 
                 <motion.h1
@@ -42,7 +52,7 @@ export const Hero = forwardRef<HTMLElement, HeroProps>(({ onViewWork, onContact 
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
                 >
-                    I build innovative web applications with cutting-edge technologies and stunning animations
+                    I build comprehensive full-stack solutions with a focus on immersive frontend experiences and cutting-edge animations.
                 </motion.p>
 
                 <motion.div
