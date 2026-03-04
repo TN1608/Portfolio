@@ -38,11 +38,34 @@ export const About = forwardRef<HTMLElement, AboutProps>(({ isInView, fadeInComp
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.2 }}
                     >
-                        <div className="relative max-w-sm sm:max-w-md mx-auto">
-                            <div className="absolute -inset-3 sm:-inset-4 rounded-xl bg-gradient-to-r from-primary/20 to-primary/40 blur-xl opacity-70"></div>
-                            <div className="relative aspect-square rounded-xl overflow-hidden border">
-                                <img src="/img/aboutme.jpg" alt="Developer" className="object-cover w-full h-full" />
-                            </div>
+                        <div className="relative max-w-sm sm:max-w-md mx-auto group cursor-pointer">
+                            <div className="absolute -inset-3 sm:-inset-4 rounded-xl bg-gradient-to-r from-primary/20 to-primary/40 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <motion.div
+                                className="relative aspect-square rounded-xl overflow-hidden border"
+                                whileHover="hover"
+                                initial="initial"
+                            >
+                                <motion.img
+                                    src="/img/aboutme.jpg"
+                                    alt="Developer"
+                                    className="object-cover w-full h-full absolute inset-0"
+                                    variants={{
+                                        initial: { opacity: 1 },
+                                        hover: { opacity: 0 }
+                                    }}
+                                    transition={{ duration: 0.5 }}
+                                />
+                                <motion.img
+                                    src="/img/aboutme2.jpg"
+                                    alt="Developer Hover"
+                                    className="object-cover w-full h-full absolute inset-0"
+                                    variants={{
+                                        initial: { opacity: 0 },
+                                        hover: { opacity: 1 }
+                                    }}
+                                    transition={{ duration: 0.5 }}
+                                />
+                            </motion.div>
                         </div>
                     </motion.div>
 
@@ -57,7 +80,7 @@ export const About = forwardRef<HTMLElement, AboutProps>(({ isInView, fadeInComp
                             Hi, I'm <span className="text-primary">Nguyen Dinh Tuan</span>
                         </h3>
                         <p className="text-sm sm:text-base text-muted-foreground">
-                            With over 1 year of experience in web development, I specialize in building
+                            With over 2 year of experience in web development, I specialize in building
                             high-performance applications with beautiful user interfaces and smooth animations.
                             I'm passionate about creating digital solutions that solve real-world problems.
                         </p>
@@ -69,7 +92,7 @@ export const About = forwardRef<HTMLElement, AboutProps>(({ isInView, fadeInComp
                             </div>
                             <div>
                                 <h4 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Experience</h4>
-                                <p className="text-xs sm:text-sm text-muted-foreground">1+ Years</p>
+                                <p className="text-xs sm:text-sm text-muted-foreground">1.5+ Years</p>
                             </div>
                             <div>
                                 <h4 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Email</h4>
