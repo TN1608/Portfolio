@@ -8,6 +8,7 @@ import { ThemeRippleEffect } from "@/components/theme-ripple-effect";
 import Preloader from "@/components/Preloader";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Inter } from "next/font/google"
+import VerticalToolTipMenu from "@/components/vertical-tooltip";
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <ThemeRippleProvider>
                         <SmoothScroll />
+                        <VerticalToolTipMenu />
                         <ThemeRippleEffect />
                         <Preloader />
                         {children}

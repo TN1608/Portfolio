@@ -12,7 +12,6 @@ import { Contact } from "@/components/pages/contact"
 import { Hero } from "@/components/pages/hero"
 import { Projects } from "@/components/pages/projects"
 import { Skills } from "@/components/pages/skills"
-import { ToggleButtons } from "@/components/ToggleButtons"
 import { ThemeRippleContext } from "@/context/theme-ripple-context"
 
 // Register GSAP plugins
@@ -106,7 +105,6 @@ export default function Home() {
 
             {/* Nội dung chính */}
             <div>
-                <ToggleButtons scale={scale.get()} />
                 <Navbar activeSection={activeSection} scrollToSection={scrollToSection} navItems={navItems} />
 
                 <Hero
