@@ -32,19 +32,20 @@ export default function Home() {
     const { scrollYProgress } = useScroll()
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8])
 
-    const isAboutInView = useInView(aboutRef, { once: false, amount: 0.5 })
-    const isProjectsInView = useInView(projectsRef, { once: false, amount: 0.3 })
-    const isSkillsInView = useInView(skillsRef, { once: false, amount: 0.3 })
-    const isContactInView = useInView(contactRef, { once: false, amount: 0.3 })
+    const isHeroInView = useInView(heroRef, { once: false, amount: 0.1 })
+    const isAboutInView = useInView(aboutRef, { once: false, amount: 0.1 })
+    const isProjectsInView = useInView(projectsRef, { once: false, amount: 0.1 })
+    const isSkillsInView = useInView(skillsRef, { once: false, amount: 0.1 })
+    const isContactInView = useInView(contactRef, { once: false, amount: 0.1 })
 
-    // Update active section based on scroll position
+    // Update active section based on scroll position - ordered from top to bottom
     useEffect(() => {
         if (isContactInView) setActiveSection("contact")
         else if (isSkillsInView) setActiveSection("skills")
         else if (isProjectsInView) setActiveSection("projects")
         else if (isAboutInView) setActiveSection("about")
-        else setActiveSection("home")
-    }, [isAboutInView, isProjectsInView, isSkillsInView, isContactInView])
+        else if (isHeroInView) setActiveSection("home")
+    }, [isHeroInView, isAboutInView, isProjectsInView, isSkillsInView, isContactInView])
 
     // GSAP animations - Tái khởi tạo khi fadeInComplete thay đổi
     useEffect(() => {

@@ -2,6 +2,7 @@
 
 import React from "react"
 import { motion } from "framer-motion"
+import MobileNavbar from "./MobileNavbar"
 
 interface NavItem {
     name: string
@@ -46,6 +47,7 @@ export function Navbar({ activeSection, scrollToSection, navItems }: NavbarProps
                     </motion.button>
                 ))}
             </div>
+            <MobileNavbar activeSection={activeSection} scrollToSection={scrollToSection} navItems={navItems} />
         </motion.nav>
     )
 }

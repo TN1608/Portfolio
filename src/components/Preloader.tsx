@@ -71,14 +71,14 @@ export default function Preloader() {
     return (
         <div
             ref={containerRef}
-            className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none"
+            className="fixed inset-0 z-9999 flex items-center justify-center pointer-events-none"
         >
             {/* Stair Bars Background */}
             <div className="absolute inset-0 flex w-full h-full pointer-events-auto">
                 {[...Array(5)].map((_, i) => (
                     <div
                         key={i}
-                        className="stair-bar h-full w-1/5 bg-neutral-950 dark:bg-neutral-50"
+                        className="stair-bar h-full flex-1 bg-neutral-950 dark:bg-neutral-50 -mr-px last:mr-0"
                     />
                 ))}
             </div>
